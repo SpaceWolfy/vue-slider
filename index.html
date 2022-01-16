@@ -19,14 +19,20 @@
   <body>
     <div id="app">
       <div class="imgs-slider">
+        <!-- Qui indico il punto di partenza del carosello, che prenderà l'immagine contenuta in posizione 0 nell'array 
+        images[imgIndex]= images[0] in questo caso -->
         <img :src="'img/' + images[imgIndex]" alt="" />
+        <!-- al click del bottone cambia l'immagine, viene richiamata la funzione prevImg -->
         <div @click="prevImg" class="p-btn">
           <i class="far fa-arrow-alt-circle-left"></i>
         </div>
+        <!-- al click del bottone cambia l'immagine, viene richiamata la funzione nextImg -->
         <div @click="nextImg" class="n-btn">
           <i class="far fa-arrow-alt-circle-right"></i>
         </div>
         <div class="pos-container">
+          <!-- per ogni immagine e relativo index nell'array images, creare un div con la classe ping-img, a cui, se l'index dell'immagine è uguale ad imgIndex,
+          allora sarà concatenata la classe active, altrimenti la classe disable -->
           <div
             v-for="(img, i) in images"
             :class="['ping-img', i === imgIndex ? 'active' : 'disable']"
