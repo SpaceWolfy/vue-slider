@@ -31,6 +31,10 @@ new Vue({
         this.imgIndex++;
       }
     },
+    // cliccando sui ping dell'html cambio immagine selezionando quella che preferisco
+    singleImg: function (i) {
+      this.imgIndex = i;
+    },
   },
   //fa funzionare l'autoplay soltanto quando tutto l'html è stato stampato in pagina
   // il mounted e il created vengono richiamati da Vue.js stesso e sa lui quando chiamarli, per questo si mettono fuori dal methods

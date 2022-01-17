@@ -36,6 +36,7 @@
           <div
             v-for="(img, i) in images"
             :class="['ping-img', i === imgIndex ? 'active' : 'disable']"
+            @click="singleImg(i)"
           ></div>
         </div>
       </div>
